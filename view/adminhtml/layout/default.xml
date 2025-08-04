@@ -7,18 +7,29 @@
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <head>
-        <css src="Rafeektt_MAdminBranding::css/module.css" rel="stylesheet" type="text/css"/>
-    </head>
     <body>
+        <referenceBlock name="head.additional">
+            <block class="Magento\Framework\View\Element\Text" name="rafeektt.madminbranding.stylesheet">
+                <arguments>
+                    <argument name="text" xsi:type="string">
+                        <![CDATA[
+                            <link rel="stylesheet" type="text/css" media="all" href="Rafeektt_MAdminBranding::css/module.css" />
+                        ]]>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+
         <referenceBlock name="logo" template="Rafeektt_MAdminBranding::page/header.phtml">
             <arguments>
                 <argument name="admin_logo_view_model"
                           xsi:type="object">Rafeektt\MAdminBranding\ViewModel\AdminLogo</argument>
             </arguments>
         </referenceBlock>
+
         <referenceBlock name="copyright" remove="true"/>
         <referenceBlock name="legal" remove="true"/>
+
         <referenceContainer name="footer">
             <block name="custom_copyright"
                    template="Rafeektt_MAdminBranding::page/copyright.phtml">
