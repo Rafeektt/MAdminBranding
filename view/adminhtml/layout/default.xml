@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Rafeektt. All rights reserved.
+ * See LICENCE.txt for licence details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Rafeektt_MAdminBranding::css/module.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <referenceBlock name="logo" template="Rafeektt_MAdminBranding::page/header.phtml">
+            <arguments>
+                <argument name="admin_logo_view_model"
+                          xsi:type="object">Rafeektt\MAdminBranding\ViewModel\AdminLogo</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceBlock name="copyright" remove="true"/>
+        <referenceBlock name="legal" remove="true"/>
+        <referenceContainer name="footer">
+            <block name="custom_copyright"
+                   template="Rafeektt_MAdminBranding::page/copyright.phtml">
+                <arguments>
+                    <argument name="view_model"
+                              xsi:type="object">Rafeektt\MAdminBranding\ViewModel\AdminLogo</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
